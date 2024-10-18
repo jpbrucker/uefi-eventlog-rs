@@ -283,6 +283,14 @@ impl Digest {
             Err(Error::InvalidEventDigest)
         }
     }
+
+    pub fn method(&self) -> DigestAlgorithm {
+        self.method
+    }
+
+    pub fn digest(&self) -> &Vec<u8> {
+        &self.digest
+    }
 }
 
 #[derive(Debug, Serialize)]
